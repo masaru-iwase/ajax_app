@@ -9,12 +9,14 @@ function memo() {
     XHR.onload = () => {
       if (XHR.status != 200) {
         alert(`Error ${XHR.status}: ${XHR.statusText}`);
-      } else {
         return null;
       }
       const item = XHR.response.post;
       const list = document.getElementById("list");
       const formText = document.getElementById("content");
+      console.log(item)
+      console.log(list)
+      console.log(formText)
       const HTML = `
         <div class="post" data-id=${item.id}>
           <div class="post-date">
@@ -29,5 +31,5 @@ function memo() {
     };
     e.preventDefault();
   });
- }
- window.addEventListener("load", memo);
+}
+window.addEventListener("load", memo);
